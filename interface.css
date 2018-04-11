@@ -1,0 +1,617 @@
+:root {
+    --mainColor:rgba(0,150,250,1);
+    --secondColor:rgba(255,193,7,1);
+}
+body,html {
+	height:100%;
+	margin:0px;
+}
+.analyserCanvas {
+  
+  background-color:black;
+}
+.incDecButton {
+  width:20px;
+  height:20px;
+  background-color: var(--secondColor);
+  color: black;
+  border-radius: 5px;
+  transition: all 0.5s ease-out;
+  text-align: center;
+  cursor: pointer;
+}
+.incDecButton:hover {
+  background-color: black;
+  color: var(--secondColor);
+  width:20px;
+  height:20px;
+  box-shadow: 0em 0em 0.2em 0.4em rgba(255,255,255,0.1);
+  border-radius: 5px;
+}
+.button {
+
+  background-color: black;
+  color: var(--secondColor);
+  text-align: center;
+  padding: 0.3em;
+  box-shadow: 0em 0em 0.05em 0.1em rgba(255,255,255,0.5);
+}
+.button:hover {
+  background-color: rgba(150,150,150,1);
+}
+
+.closeBut {
+  background-color: black;
+  color: var(--secondColor);
+  text-align: center;
+  padding: 0.3em;
+  box-shadow: 0em 0em 0.05em 0.1em rgba(255,255,255,0.5);
+}
+.closeBut:hover {
+  background-color: rgba(150,150,150,1);
+}
+.nodeSettings {
+  min-width: 200px;
+}
+.settingSetter {
+  width          : 80%;
+  margin-left    : 10%;
+  padding-top    : 0.5em;
+  padding-bottom : 0.5em;
+
+  /*box-shadow:inset 0em 0em 0.1em 0.05em white;*/
+  color          : white;
+  border-radius  : 4px;
+}
+
+.settingSetterLab {
+  text-align : center;
+}
+
+.settingSetterOpt{
+  float            : left;
+  text-align: center;
+  background-color : black;
+}
+.settingSetterOpt.checked {
+  box-shadow: inset  0em 0em 0.0em 0.1em var(--secondColor);
+}
+.settingSetterOpt:hover {
+  background-color:rgba(100,100,100,1);
+  color:black;
+}
+
+.filterCont {
+  margin-top:5%;
+  width: 30%;
+  float: left;
+  margin-left:2.5%;
+  background-color: black;
+  color:white;
+  box-shadow: inset 0em 0em 0.2em 0.05em white, 0em 0.1em 0.3em 0.1em rgba(0,0,0,0.5);
+  transition: all 0.5s ease-in;
+  border-radius: 0.1em;
+}
+.filterTitle {
+    background-color: grey;
+    color:var(--secondColor);
+    box-shadow:inset -1px 0px 1px 2px rgba(0,0,0,0.5), inset 1px 0px 1px 2px rgba(0,0,0,0.5);
+    border-radius: 0.1em;
+
+}
+.filterTitle:hover {
+    opacity:0.9;
+ 
+}
+.timeCont {
+  width:40%;
+  margin-left:5%;
+  margin-bottom:5%;
+  float:left;
+}
+.setTime {
+  width:80%;
+}
+.setTime input {
+
+}
+.setTime .label {
+
+}
+.nodeSettings {
+  padding-top:2em;
+  padding-bottom:2em;
+  background-color: black;
+  border-radius:15px;
+  box-shadow:inset 0em 0em 0.3em 0em var(--secondColor), 0em 0.2em 0.1em 0.2em rgba(0,0,0,0.5), 0em 0em 0.2em 0.4em rgba(255,255,255,0.5);
+  transition: all 1s ease-out;
+}
+.botBar {
+  background-color: black;
+  z-index: 200;
+}
+.botSect {
+  overflow: hidden;
+}
+.botSectTitle {
+  text-align: center;
+  color: black;
+  font-size:3vh;
+  box-shadow: inset 0px 0px 2px 3px white;
+  cursor:pointer;
+  background-color: rgba(255,255,255,0.6);
+    box-shadow: inset -1px 0px 1px 2px rgba(0,0,0,0.5), inset 1px 0px 1px 2px rgba(0,0,0,0.5);
+  
+}
+.botSectTitle:hover {
+  background-color:rgba(255,255,255,0.8);
+}
+.botSectBody {
+  transition: all 0.5s ease-out;
+}
+.grabber {
+   height:1em;
+
+   text-align: center;
+   min-width:1em;
+   max-width:2em;
+   padding-left:0.1em;
+   padding-right:0.1em;
+   position: absolute;
+   right: 5%;
+   border-radius: 0.2em;
+   cursor: pointer;
+   z-index: 10;
+   user-select: none;
+   /*transition: 1s box-shadow ease-out;*/
+}
+.grabber:hover {
+  box-shadow: 0em 0em 0.2em 0.2em white;
+}
+.label {
+  background-color: black;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  color: var(--secondColor);
+  margin-top:5px;
+}
+.labelTop {
+  background-color: black;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  color: var(--secondColor);
+  margin-top:2px;
+  width:100%;
+  text-align: center;
+  height:20px;
+}
+input {
+  background-color: black;
+  color: white;
+}
+.labelTop input {
+  display: none;
+  width:100%;
+}
+.labelTop:hover input {
+  display:block;
+}
+.labelTop:hover span {
+  display:none;
+}
+
+.grabber input {
+  display:none;
+  height:100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.grabberInputLabel {
+  width: 100px;
+  height:20px;
+  z-index: 100;
+  color: var(--secondColor);
+  font-size: 0.64em;
+  margin-top:1em;
+}
+.grabber .grabberInputLabel {
+  display:none;
+}
+.grabber.clicked .grabberInputLabel {
+  display:block;
+}
+.grabber.clicked input {
+  display:block;
+}
+.grabber span {
+  user-select: none;
+  pointer-events: none;
+}
+#ghostGrabber{
+ background-color:green;
+ opacity: 0.6;
+   height:1em;
+   text-align: center;
+   width:1em;
+   padding-left:0.1em;
+   padding-right:0.1em;
+   position: absolute;
+   right: -50%;
+   border-radius: 0.2em;
+   cursor: pointer;
+   position: absolute;
+   user-select: none;
+    z-index:999;
+  }
+  #ghostGrabberFreq{
+ background-color:green;
+ opacity: 0.6;
+   height:1em;
+   text-align: center;
+   width:1em;
+   padding-left:0.1em;
+   padding-right:0.1em;
+   position: absolute;
+   right: -50%;
+   border-radius: 0.2em;
+   cursor: pointer;
+   position: absolute;
+   user-select: none;
+    z-index:999;
+  }
+  #ghostGrabberGain{
+ background-color:green;
+ opacity: 0.6;
+   height:1em;
+   text-align: center;
+   width:1em;
+   padding-left:0.1em;
+   padding-right:0.1em;
+   position: absolute;
+   right: -50%;
+   border-radius: 0.2em;
+   cursor: pointer;
+   position: absolute;
+   user-select: none;
+    z-index:999;
+  }
+
+#title {
+	float:left;
+	width:100%;
+	text-align: center;
+  height:13%;
+	font-size: 5vh;
+	font-family: 'Titillium Web', sans-serif;
+
+
+}
+#subTitle {
+	float:left;
+	width:100%;
+  margin-top:-5vh;
+	text-align: center;
+  height:4vh;
+	font-size: 3vh;
+	font-family: 'Titillium Web', sans-serif;
+
+
+}
+.addBehind {
+  position: absolute;
+  right:-10px;
+  height:100%;
+  width:20px;
+  top:0px;
+  font-size: 2.5vh;
+  overflow: hidden;
+  
+  border-radius: 5px;
+  text-align: center;
+  z-index: 1000;
+  cursor: copy;
+  color:var(--secondColor);
+  background-color: grey;
+  box-shadow: inset 0em 0em 0em 0.2em rgba(0,0,0,0.5);
+
+}
+.addBehind:hover {
+  z-index: 1001;
+  background-color: lightgrey;
+
+}
+
+
+.addBefore {
+  width:40px;
+  font-size: 14px;
+  background-color: white;
+  border:1px solid black;
+  border-radius: 5px;
+  float: left;
+  position: relative;
+  height:30px;
+  margin-top:-35px;
+  left:-20px;
+  z-index: 1000;
+  margin-bottom:5px;
+
+}
+.addBefore:hover {
+  background-color: rgba(105,150,150,0.6);
+}
+.firstColor {
+	background-color:rgba(9,9,9,1);
+	color: white;
+}
+.secondColor {
+	background-color: rgba(255,193,7,1);
+	color: black;
+}
+.thirdColor {
+	background-color: rgba(158,158,158,1);
+	color: black;
+}
+.gainNode {
+
+    background-color: var(--thirdColor);
+    box-shadow: inset -1px 0px 1px 2px rgba(0,0,0,0.5), inset 1px 0px 1px 2px rgba(0,0,0,0.5);
+
+    transition: 0.2s all ease-out;
+    
+}
+.frequencyNode:hover  {
+  z-index: 100;
+}
+.frequencyNode:hover .hoverOpts {
+  display:block;
+}
+
+.frequencyNode:hover img {
+  top:-20px;
+}
+.frequencyNode {
+    background-color: var(--thirdColor);
+    box-shadow: inset -1px 0px 1px 2px rgba(0,0,0,0.5), inset 1px 0px 1px 2px rgba(0,0,0,0.5);
+
+    transition: 0.2s all ease-out;
+    
+}
+.gainNode:hover  {
+  z-index: 100;
+}
+.gainNode:hover .hoverOpts {
+  display:block;
+}
+
+.gainNode:hover img {
+  top:-20px;
+}
+.hoverOpts {
+  display:none;
+  height: 100%;
+}
+.hoverOpts img {
+   
+   height:80%;
+   position:relative;
+   margin-top:2.5%;
+   left:40%;
+   min-width: 15px;
+   max-width: 100%;
+   max-height: 80%;
+}
+
+.playBut {
+  background-color: black;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius:1em;
+  color: white;
+  font-family: 'Titillium Web', bold;
+  font-size:2em;
+  position: relative;
+  padding-left:0.5em;
+  transition: all 0.25s ease-out;
+  width:120%;
+  right:20%;
+  text-align: center;
+  z-index: 100000;
+  cursor:pointer;
+}
+.playBut:hover {
+  width:130%;
+  right:30%;
+  background-color: grey;
+}
+.
+.addBehind:hover .hoverOpts {
+  display:block;
+}
+.hoverOpts img:hover {
+  box-shadow:0em 0em 0.2em 0em rgba(255,255,255,1);
+}
+#main {
+ 
+}
+.piano {
+  transition: all 1s ease-out;
+}
+.piano.shown{
+  top:20%;
+  left:25%;
+}
+canvas {
+  background-color: black;
+  box-shadow: inset 0em 0em 0.6em 0.1em rgba(255,255,255,0.5);
+}
+.frequencyNodes {
+  margin-top:2%;
+  background-color: rgba(0,0,0,0.3);
+  box-shadow: 0em 0.1em 0.3em 0.1em rgba(0,0,0,0.5);
+}
+.gainNodes {
+  margin-top:2%;
+  background-color: rgba(0,0,0,0.3);
+  box-shadow: 0em 0.1em 0.3em 0.1em rgba(0,0,0,0.5);
+}
+.hoverOpts {
+  display:none;
+}
+
+
+
+
+
+.clearfix:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+#sidebar{
+   background-color: IndianRed;
+   width:25%;
+   float: left;
+   height:200px;
+   overflow-y: hidden;
+}
+
+.dragbar{
+   background-color:black;
+   height:100%;
+   width: 3px;
+   cursor: col-resize;
+
+   z-index: 10;
+}
+/*From https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/*/
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 10px;
+  width: 10px;
+  border-radius: 3px;
+  background: var(--secondColor);
+  cursor: pointer;
+  margin-top: -0px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 10px;
+  width: 10px;
+  border-radius: 3px;
+  background: var(--secondColor);
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 10px;
+  width: 10px;
+  border-radius: 3px;
+  background: var(--secondColor);
+  cursor: pointer;
+}
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb:hover {
+
+ opacity:0.9;
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb:hover {
+
+  opacity:0.9;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb:hover {
+
+  opacity:0.9;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d, 0em 0em 0.2em 0.3em rgba(255,255,255,0.4);
+  background: black;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: rgba(0,0,0,0.9);
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d, 0em 0em 0.2em 0.3em rgba(255,255,255,0.4);
+  background: black;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: black;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d, 0em 0em 0.2em 0.3em rgba(255,255,255,0.4);
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: black;
+}
+input[type=range]::-ms-fill-upper {
+  background: black;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d, 0em 0em 0.2em 0.3em rgba(255,255,255,0.4);
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: black;
+}
